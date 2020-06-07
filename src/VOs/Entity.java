@@ -2,7 +2,7 @@ package VOs;
 
 import Utils.*;
 
-public abstract class Entity extends Serializable {
+public class Entity extends Serializable {
 	
 	protected Boolean isWalkable;
 	protected Boolean isAttackable;

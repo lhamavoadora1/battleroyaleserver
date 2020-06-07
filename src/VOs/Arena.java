@@ -3,7 +3,6 @@ import Utils.*;
 
 public class Arena extends Serializable {
 	
-	String name;
 	Entity[][][] grid;
 
 	static final String TYPE = "Arena";

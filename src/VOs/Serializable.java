@@ -2,7 +2,7 @@ package VOs;
 
 import com.google.gson.Gson;
 
-public abstract class Serializable {
+public class Serializable {
 	
 	String name;
 	String type;

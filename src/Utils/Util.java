@@ -1,5 +1,9 @@
 package Utils;
 
+import java.io.IOException;
+import java.util.stream.Collectors;
+import javax.servlet.http.HttpServletRequest;
+
 public class Util {
 	
 	public static Object[] setTopItemInArray(Object obj, Object[] array) {
@@ -39,6 +43,10 @@ public class Util {
 		}
 		System.out.println("Array is empty!");
 		return null;
+	}
+	
+	public static String getRequestBody(HttpServletRequest request) throws IOException {
+		return request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 	}
 
 }
