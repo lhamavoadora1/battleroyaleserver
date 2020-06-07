@@ -1,12 +1,13 @@
 package VOs;
 import Utils.*;
 
-public class Arena {
+public class Arena extends Serializable {
 	
 	String name;
 	Entity[][][] grid;
+
+	static final String TYPE = "Arena";
 	static final Integer CELL_ELEMENTS = 2;
-	
 	static final Integer MIN_SIZE = 3;
 	
 	static Integer SET_X_SIZE;
@@ -22,17 +23,18 @@ public class Arena {
 	}
 	
 	public Arena() {
-		this.name = "normal";
+		super("normal", TYPE);
 		setSizes(10);
 		grid = new Entity[SET_X_SIZE][SET_Y_SIZE][CELL_ELEMENTS];
 	}
 	public Arena(String name) {
-		this.name = name;
+		super(name, TYPE);
 		setSizes(10);
 		grid = new Entity[SET_X_SIZE][SET_Y_SIZE][CELL_ELEMENTS];
 	}
 	
 	public Arena(Integer xSize, Integer ySide) {
+		super("normal", TYPE);
 		setSizes(useMinSize(xSize), useMinSize(ySide));
 		grid = new Entity[SET_X_SIZE][SET_Y_SIZE][CELL_ELEMENTS];
 	}
