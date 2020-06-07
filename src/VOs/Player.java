@@ -1,5 +1,4 @@
 package VOs;
-import Things.*;
 
 public class Player extends Life {
 	
