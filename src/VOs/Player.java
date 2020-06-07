@@ -7,12 +7,12 @@ public class Player extends Life {
 	Item item;
 	
 	public Player() {
-		super("Player", 5, false, null);
+		super("Steve", "Player", 5, false, null);
 		this.weapon = new Weapon();
 	}
 	
-	public Player(String id, String imageUrl) {
-		super("Player", 5, false, imageUrl);
+	public Player(String id, String name, String imageUrl) {
+		super(name, "Player", 5, false, imageUrl);
 		this.id     = id;
 		this.weapon = new Weapon();
 	}

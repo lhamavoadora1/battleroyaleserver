@@ -23,12 +23,12 @@ public class Arena {
 	
 	public Arena() {
 		this.name = "normal";
-		setSizes(21);
+		setSizes(10);
 		grid = new Entity[SET_X_SIZE][SET_Y_SIZE][CELL_ELEMENTS];
 	}
 	public Arena(String name) {
 		this.name = name;
-		setSizes(21);
+		setSizes(10);
 		grid = new Entity[SET_X_SIZE][SET_Y_SIZE][CELL_ELEMENTS];
 	}
 	

@@ -5,26 +5,27 @@ import Utils.*;
 
 public abstract class Entity {
 	
-//	protected String description;
+	protected String name;
 	protected String type;
 	protected Boolean isWalkable;
 	protected Boolean isAttackable;
 	protected Coordinate position;
 	protected String imageUrl;
 
-	protected Entity(String type, Boolean isWalkable, Boolean isAttackable, String imageUrl) {
+	protected Entity(String name, String type, Boolean isWalkable, Boolean isAttackable, String imageUrl) {
+		this.name         = name;
 		this.type         = type;
 		this.isWalkable   = isWalkable;
 		this.isAttackable = isAttackable;
 		this.imageUrl     = imageUrl;
 	}
 	
-//	public void setDescription(String description) {
-//		this.description = description;
-//	}
-//	public String getDescription() {
-//		return this.description;
-//	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getName() {
+		return this.name;
+	}
 	
 	public String getType() {
 		return this.type;

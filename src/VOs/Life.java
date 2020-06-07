@@ -2,20 +2,12 @@ package VOs;
 
 public abstract class Life extends Entity {
 	
-	protected String name;
 	protected Integer lifePoints;
 	protected Boolean isUnconscious;
 	protected Boolean isDead;
 	
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getName() {
-		return this.name;
-	}
-	
-	protected Life(String type, Integer lifePoints, Boolean isWalkable, String imageUrl) {
-		super(type, isWalkable, true, imageUrl);
+	protected Life(String name, String type, Integer lifePoints, Boolean isWalkable, String imageUrl) {
+		super(name, type, isWalkable, true, imageUrl);
 		this.lifePoints    = lifePoints;
 		this.isUnconscious = false;
 		this.isDead        = false;

@@ -3,11 +3,11 @@ package VOs;
 public class Ground extends Entity {
 	
 	public Ground() {
-		super("Ground", true, false, null);
+		super("Plain", "Ground", true, false, null);
 	}
 	
-	public Ground(String imageUrl) {
-		super("Ground", true, false, imageUrl);
+	public Ground(String name, String imageUrl) {
+		super(name, "Ground", true, false, imageUrl);
 	}
 
 }
