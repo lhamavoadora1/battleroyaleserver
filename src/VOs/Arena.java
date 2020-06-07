@@ -1,9 +1,9 @@
-package Things;
+package VOs;
 import Utils.*;
-import VOs.*;
 
 public class Arena {
 	
+	String name;
 	Entity[][][] grid;
 	static final Integer CELL_ELEMENTS = 2;
 	
@@ -22,6 +22,12 @@ public class Arena {
 	}
 	
 	public Arena() {
+		this.name = "normal";
+		setSizes(21);
+		grid = new Entity[SET_X_SIZE][SET_Y_SIZE][CELL_ELEMENTS];
+	}
+	public Arena(String name) {
+		this.name = name;
 		setSizes(21);
 		grid = new Entity[SET_X_SIZE][SET_Y_SIZE][CELL_ELEMENTS];
 	}

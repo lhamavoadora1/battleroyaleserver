@@ -2,7 +2,7 @@ package Actions;
 
 import com.google.gson.Gson;
 
-import Things.Arena;
+import VOs.Arena;
 import VOs.Life;
 
 public abstract class Intention {

@@ -3,12 +3,18 @@ import Things.*;
 
 public class Player extends Life {
 	
-//	private String id;
-	private Weapon weapon;
-	private Item item;
+	String id;
+	Weapon weapon;
+	Item item;
 	
 	public Player() {
-		super("Player", 5, false);
+		super("Player", 5, false, null);
+		this.weapon = new Weapon();
+	}
+	
+	public Player(String id, String imageUrl) {
+		super("Player", 5, false, imageUrl);
+		this.id     = id;
 		this.weapon = new Weapon();
 	}
 	

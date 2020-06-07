@@ -1,5 +1,4 @@
-package Things;
-import VOs.*;
+package VOs;
 
 public class Weapon extends Item {
 	

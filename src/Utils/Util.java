@@ -1,7 +1,5 @@
 package Utils;
 
-import VOs.Entity;
-
 public class Util {
 	
 	public static Object[] setTopItemInArray(Object obj, Object[] array) {
@@ -10,7 +8,7 @@ public class Util {
 			if (array[i] == null) {
 				array[i] = obj;
 				isFull = false;
-				System.out.println("Object set in last array empty position!" + " " + ((Entity)array[i]).getType());
+//				System.out.println("Object set in last array empty position!" + " " + ((Entity)array[i]).getType());
 				break;
 			}
 		}

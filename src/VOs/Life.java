@@ -14,8 +14,8 @@ public abstract class Life extends Entity {
 		return this.name;
 	}
 	
-	protected Life(String type, Integer lifePoints, Boolean isWalkable) {
-		super(type, isWalkable, true);
+	protected Life(String type, Integer lifePoints, Boolean isWalkable, String imageUrl) {
+		super(type, isWalkable, true, imageUrl);
 		this.lifePoints    = lifePoints;
 		this.isUnconscious = false;
 		this.isDead        = false;

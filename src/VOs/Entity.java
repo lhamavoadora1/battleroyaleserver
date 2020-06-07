@@ -10,11 +10,13 @@ public abstract class Entity {
 	protected Boolean isWalkable;
 	protected Boolean isAttackable;
 	protected Coordinate position;
+	protected String imageUrl;
 
-	protected Entity(String type, Boolean isWalkable, Boolean isAttackable) {
+	protected Entity(String type, Boolean isWalkable, Boolean isAttackable, String imageUrl) {
 		this.type         = type;
 		this.isWalkable   = isWalkable;
 		this.isAttackable = isAttackable;
+		this.imageUrl     = imageUrl;
 	}
 	
 //	public void setDescription(String description) {
