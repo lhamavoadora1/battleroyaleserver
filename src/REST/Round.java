@@ -10,15 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 
+import DAOs.MySQL;
 import Utils.*;
 import VOs.*;
 
-@WebServlet("/get")
+@WebServlet("/round")
 public class Round extends HttpServlet {
 
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		response.getWriter().append("Body returned: " +  Util.getRequestBody(request));
-//		// here call the DAO read Serializable method
-//	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		MySQL.buildQuery(table_name, columnArray, conditionArray, valueArray);
+		response.getWriter().append("Body returned: " +  Util.getRequestBody(request));
+	}
 	
 }

@@ -1,6 +1,7 @@
 package DAOs;
 
 import java.sql.*;
+import java.util.LinkedList;
 
 public class MySQL {
 	
@@ -22,6 +23,19 @@ public class MySQL {
 	public static String buildInsertDml(String table_name, String[] columnArray, String[] valueArray) {
 		return "INSERT INTO " + table_name + " (" + String.join(", ", columnArray) + ") " +
 			   "VALUES (" + String.join(", ", valueArray) + ")";
+	}
+	
+	public static String buildQuery(String table_name, String[] columnArray, String[] conditionArray, String[] valueArray) {
+		return "SELECT * FROM " + table_name + 
+			   " WHERE " + buildConditionsUsing("AND", conditionArray, valueArray);
+	}
+	
+	static String buildConditionsUsing(String conditionType, String[] conditionArray, String[] valueArray) {
+		LinkedList<String> fullConditionList = new LinkedList<String>(); 
+		for (Integer i = 0; i < conditionArray.length; i++) {
+			fullConditionList.add(conditionArray[i] + valueArray[i]);
+		}
+		return String.join(conditionType, fullConditionList);
 	}
 
 }
