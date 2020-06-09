@@ -13,19 +13,14 @@ import com.google.gson.JsonElement;
 import Utils.*;
 import VOs.*;
 
-@WebServlet("/insert")
-public class Insert extends HttpServlet {
+@WebServlet("/database")
+public class Database extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
-    public Insert() {
+    public Database() {
         super();
     }
-
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		response.getWriter().append("Body returned: " +  Util.getRequestBody(request));
-//		// here call the DAO read Serializable method
-//	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
