@@ -4,9 +4,11 @@ import java.sql.*;
 
 public class MySQL {
 	
-	public static void test() throws SQLException {
+	static final String DATABASE_LOCATION = "jdbc:mysql://localhost/test?serverTimezone=GMT-3";
+	
+	public static void getConnection(String username, String password) throws SQLException {
 		
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/test?serverTimezone=GMT-3", "admin", "admin");
+		Connection connection = DriverManager.getConnection(DATABASE_LOCATION, username, password);
 		System.out.println(connection.getCatalog());
 		
 		Statement stat = connection.createStatement();
@@ -15,6 +17,11 @@ public class MySQL {
 			System.out.println(result.getString(2));
 		}
 		
+	}
+	
+	public static String buildInsertDml(String table_name, String[] columnArray, String[] valueArray) {
+		return "INSERT INTO " + table_name + " (" + String.join(", ", columnArray) + ") " +
+			   "VALUES (" + String.join(", ", valueArray) + ")";
 	}
 
 }

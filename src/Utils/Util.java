@@ -48,5 +48,9 @@ public class Util {
 	public static String getRequestBody(HttpServletRequest request) throws IOException {
 		return request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 	}
+	
+	public static String getExceptionMessage(Exception e) {
+		return e.getMessage() + " - " + e.getStackTrace();
+	}
 
 }

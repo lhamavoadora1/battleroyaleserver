@@ -33,29 +33,41 @@ public class Insert extends HttpServlet {
 		
 		System.out.println("from server" + body);
 		
-		response.getWriter().append("Body returned: " + body);
+		Boolean hasError = false;
+		String message;
 		
 		Gson jsonParser = new Gson();
 		
-		Serializable jsonObj = jsonParser.fromJson(body, Serializable.class);
+		try {
 		
-		switch (jsonObj.getType()) {
-		case "Arena":
-			// here call the DAO insert Arena method
-			break;
-		case "Ground":
-			// here call the DAO insert Ground method
-			break;
-		case "Wall":
-			// here call the DAO insert Wall method
-			break;
-		case "Weapon":
-			// here call the DAO insert Weapon method
-			break;
-		case "Player":
-			// here call the DAO insert Player method
-			break;
+			Serializable jsonObj = jsonParser.fromJson(body, Serializable.class);
+			
+			switch (jsonObj.getType()) {
+			case "Arena":
+				// here call the DAO insert Arena method
+				break;
+			case "Ground":
+				// here call the DAO insert Ground method
+				break;
+			case "Wall":
+				// here call the DAO insert Wall method
+				break;
+			case "Weapon":
+				// here call the DAO insert Weapon method
+				break;
+			case "Player":
+				// here call the DAO insert Player method
+				break;
+			}
+			
+			message = "Body returned";
+		
+		} catch (Exception e) {
+			message = Util.getExceptionMessage(e);
 		}
+		
+		response.getWriter().append(message);
+		
 	}
 
 }
