@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 
+import DAOs.MySQL;
 import Utils.*;
 import VOs.*;
 
@@ -28,32 +28,34 @@ public class Database extends HttpServlet {
 		
 		System.out.println("from server" + body);
 		
-		Boolean hasError = false;
+//		Boolean hasError = false;
 		String message;
 		
 		Gson jsonParser = new Gson();
+		MySQL database = new MySQL();
 		
 		try {
 		
 			Serializable jsonObj = jsonParser.fromJson(body, Serializable.class);
+			database.insert(jsonObj);
 			
-			switch (jsonObj.getType()) {
-			case "Arena":
-				// here call the DAO insert Arena method
-				break;
-			case "Ground":
-				// here call the DAO insert Ground method
-				break;
-			case "Wall":
-				// here call the DAO insert Wall method
-				break;
-			case "Weapon":
-				// here call the DAO insert Weapon method
-				break;
-			case "Player":
-				// here call the DAO insert Player method
-				break;
-			}
+//			switch (jsonObj.getType()) {
+//			case "Arena":
+//				database.insert((Arena)jsonObj);
+//				break;
+//			case "Ground":
+//				database.insert((Ground)jsonObj);
+//				break;
+//			case "Wall":
+//				database.insert((Wall)jsonObj);
+//				break;
+//			case "Weapon":
+//				database.insert((Weapon)jsonObj);
+//				break;
+//			case "Player":
+//				database.insert((Player)jsonObj);
+//				break;
+//			}
 			
 			message = "Body returned";
 		
