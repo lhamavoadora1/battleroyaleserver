@@ -42,6 +42,10 @@ public class Arena extends Serializable {
 		return size >= MIN_SIZE ? size : MIN_SIZE;
 	}
 	
+	public Entity[][][] getGrid() {
+		return this.grid;
+	}
+	
 	public void setEntityPosition(Entity entity) throws Exception {
 		
 //		System.out.println("ENTITY: " + entity.getType());
