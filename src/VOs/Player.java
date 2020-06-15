@@ -17,6 +17,10 @@ public class Player extends Life {
 		this.weapon = new Weapon();
 	}
 	
+	public String getId() {
+		return this.id;
+	}
+	
 	public Weapon setWeapon(Weapon weapon) {
 		this.weapon = weapon;
 		return this.weapon;

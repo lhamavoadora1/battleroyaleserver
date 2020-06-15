@@ -31,4 +31,8 @@ public class Entity extends Serializable {
 		return this.position;
 	}
 
+	public String getImageUrl() {
+		return this.imageUrl;
+	}
+
 }

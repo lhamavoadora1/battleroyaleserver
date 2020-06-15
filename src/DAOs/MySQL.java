@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import com.google.gson.Gson;
+
 import VOs.Arena;
 import VOs.Ground;
 import VOs.Player;
@@ -14,9 +16,11 @@ import VOs.Weapon;
 public class MySQL implements DAO {
 	
 	Connection connection;
+	Gson jsonParser;
 	
 	public MySQL() {
 		connection = DbUtil.getConnection();
+		jsonParser = new Gson();
 	}
 	
 	public static String buildInsertDml(String table_name, String[] columnArray, String[] valueArray) {
@@ -62,18 +66,36 @@ public class MySQL implements DAO {
 	}
 	
 	void insert(Arena arena) {
+		String name = arena.getName();
+		String grid = jsonParser.toJson(arena.getGrid());
 		// TODO
 	}
 	void insert(Ground ground) {
+		String name     = ground.getName();
+		String type     = ground.getType();
+		String imageUrl = ground.getImageUrl();
 		// TODO
 	}
 	void insert(Wall wall) {
+		String name     = wall.getName();
+		String type     = wall.getType();
+		String imageUrl = wall.getImageUrl();
 		// TODO
 	}
 	void insert(Weapon weapon) {
+		String name     = weapon.getName();
+		String type     = weapon.getType();
+		String imageUrl = weapon.getImageUrl();
+		Integer damage  = weapon.getDamage();
+		String distance = jsonParser.toJson(weapon.getImageUrl());
 		// TODO
 	}
 	void insert(Player player) {
+		String id         = player.getId();
+		String name       = player.getName();
+		String type       = player.getType();
+		String imageUrl   = player.getImageUrl();
+		String weaponName = player.getWeapon().getName();
 		// TODO
 	}
 
