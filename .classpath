@@ -22,7 +22,6 @@
 	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/catalina-tribes.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/ecj-4.15.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/el-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/gson-2.8.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/jasper.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/jasper-el.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/jaspic-api.jar"/>
@@ -47,5 +46,6 @@
 	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/tomcat-util-scan.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/tomcat-websocket.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/websocket-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/WebContent/WEB-INF/lib/gson-2.8.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

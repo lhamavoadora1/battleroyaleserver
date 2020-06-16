@@ -65,38 +65,43 @@ public class MySQL implements DAO {
 		
 	}
 	
-	void insert(Arena arena) {
+	String insert(Arena arena) {
 		String name = arena.getName();
 		String grid = jsonParser.toJson(arena.getGrid());
 		// TODO
+		return "";
 	}
-	void insert(Ground ground) {
+	String insert(Ground ground) {
 		String name     = ground.getName();
 		String type     = ground.getType();
 		String imageUrl = ground.getImageUrl();
 		// TODO
+		return "";
 	}
-	void insert(Wall wall) {
+	String insert(Wall wall) {
 		String name     = wall.getName();
 		String type     = wall.getType();
 		String imageUrl = wall.getImageUrl();
 		// TODO
+		return "";
 	}
-	void insert(Weapon weapon) {
+	String insert(Weapon weapon) {
 		String name     = weapon.getName();
 		String type     = weapon.getType();
 		String imageUrl = weapon.getImageUrl();
 		Integer damage  = weapon.getDamage();
 		String distance = jsonParser.toJson(weapon.getImageUrl());
 		// TODO
+		return "";
 	}
-	void insert(Player player) {
+	String insert(Player player) {
 		String id         = player.getId();
 		String name       = player.getName();
 		String type       = player.getType();
 		String imageUrl   = player.getImageUrl();
 		String weaponName = player.getWeapon().getName();
 		// TODO
+		return "";
 	}
 
 	@Override
