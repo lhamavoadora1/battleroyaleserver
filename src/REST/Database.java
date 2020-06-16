@@ -39,24 +39,6 @@ public class Database extends HttpServlet {
 			Serializable jsonObj = jsonParser.fromJson(body, Serializable.class);
 			database.insert(jsonObj);
 			
-//			switch (jsonObj.getType()) {
-//			case "Arena":
-//				database.insert((Arena)jsonObj);
-//				break;
-//			case "Ground":
-//				database.insert((Ground)jsonObj);
-//				break;
-//			case "Wall":
-//				database.insert((Wall)jsonObj);
-//				break;
-//			case "Weapon":
-//				database.insert((Weapon)jsonObj);
-//				break;
-//			case "Player":
-//				database.insert((Player)jsonObj);
-//				break;
-//			}
-			
 			message = "Body returned";
 		
 		} catch (Exception e) {

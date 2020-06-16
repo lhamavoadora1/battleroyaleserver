@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public interface DAO {
 	
-	public void insert(Object obj);
+	public Boolean insert(Object obj) throws Exception;
 	
-	public void update(Object obj);
+	public Boolean update(Object obj) throws Exception;
 	
-	public void delete(Object obj);
+	public Boolean delete(Object obj) throws Exception;
 	
 	public Object find(Object obj);
 	

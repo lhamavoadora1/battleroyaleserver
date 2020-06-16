@@ -42,7 +42,7 @@ public class MySQL implements DAO {
 	}
 
 	@Override
-	public void insert(Object obj) {
+	public Boolean insert(Object obj) throws Exception {
 		
 		Serializable jsonObj = (Serializable)obj;
 		switch (jsonObj.getType()) {
@@ -63,49 +63,51 @@ public class MySQL implements DAO {
 			break;
 		}
 		
+		throw new Exception("Type not found: " + jsonObj.getType());
+		
 	}
 	
-	String insert(Arena arena) {
+	Boolean insert(Arena arena) {
 		String name = arena.getName();
 		String grid = jsonParser.toJson(arena.getGrid());
 		// TODO
-		return "";
+		return true;
 	}
-	String insert(Ground ground) {
+	Boolean insert(Ground ground) {
 		String name     = ground.getName();
 		String type     = ground.getType();
 		String imageUrl = ground.getImageUrl();
 		// TODO
-		return "";
+		return true;
 	}
-	String insert(Wall wall) {
+	Boolean insert(Wall wall) {
 		String name     = wall.getName();
 		String type     = wall.getType();
 		String imageUrl = wall.getImageUrl();
 		// TODO
-		return "";
+		return true;
 	}
-	String insert(Weapon weapon) {
+	Boolean insert(Weapon weapon) {
 		String name     = weapon.getName();
 		String type     = weapon.getType();
 		String imageUrl = weapon.getImageUrl();
 		Integer damage  = weapon.getDamage();
 		String distance = jsonParser.toJson(weapon.getImageUrl());
 		// TODO
-		return "";
+		return true;
 	}
-	String insert(Player player) {
+	Boolean insert(Player player) {
 		String id         = player.getId();
 		String name       = player.getName();
 		String type       = player.getType();
 		String imageUrl   = player.getImageUrl();
 		String weaponName = player.getWeapon().getName();
 		// TODO
-		return "";
+		return true;
 	}
 
 	@Override
-	public void update(Object obj) {
+	public Boolean update(Object obj) throws Exception {
 		
 		Serializable jsonObj = (Serializable)obj;
 		switch (jsonObj.getType()) {
@@ -126,26 +128,33 @@ public class MySQL implements DAO {
 			break;
 		}
 		
+		throw new Exception("Type not found: " + jsonObj.getType());
+		
 	}
 	
-	void update(Arena arena) {
+	Boolean update(Arena arena) {
 		// TODO
+		return true;
 	}
-	void update(Ground ground) {
+	Boolean update(Ground ground) {
 		// TODO
+		return true;
 	}
-	void update(Wall wall) {
+	Boolean update(Wall wall) {
 		// TODO
+		return true;
 	}
-	void update(Weapon weapon) {
+	Boolean update(Weapon weapon) {
 		// TODO
+		return true;
 	}
-	void update(Player player) {
+	Boolean update(Player player) {
 		// TODO
+		return true;
 	}
 
 	@Override
-	public void delete(Object obj) {
+	public Boolean delete(Object obj) throws Exception {
 		
 		Serializable jsonObj = (Serializable)obj;
 		switch (jsonObj.getType()) {
@@ -166,22 +175,29 @@ public class MySQL implements DAO {
 			break;
 		}
 		
+		throw new Exception("Type not found: " + jsonObj.getType());
+		
 	}
 	
-	void delete(Arena arena) {
+	Boolean delete(Arena arena) {
 		// TODO
+		return true;
 	}
-	void delete(Ground ground) {
+	Boolean delete(Ground ground) {
 		// TODO
+		return true;
 	}
-	void delete(Wall wall) {
+	Boolean delete(Wall wall) {
 		// TODO
+		return true;
 	}
-	void delete(Weapon weapon) {
+	Boolean delete(Weapon weapon) {
 		// TODO
+		return true;
 	}
-	void delete(Player player) {
+	Boolean delete(Player player) {
 		// TODO
+		return true;
 	}
 
 	@Override
