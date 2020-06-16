@@ -8,7 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/annotations-api.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/catalina.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/catalina-ant.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Caue/Documents/GitHub/battleroyaleserver/lib/catalina-ha.jar"/>
