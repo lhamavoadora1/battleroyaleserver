@@ -21,8 +21,8 @@ public class MySQL implements DAO {
 	Gson jsonParser;
 	
 	public MySQL() {
-		connection = DbUtil.getConnection();
 		jsonParser = new Gson();
+		connection = DbUtil.getConnection();
 	}
 	
 	public static String buildInsertDml(String table_name, String[] columnArray, String[] valueArray) {
@@ -44,28 +44,23 @@ public class MySQL implements DAO {
 	}
 
 	@Override
-	public Boolean insert(Object obj) throws Exception {
+	public Boolean insert(Object obj, String type) throws Exception {
 		
-		Serializable jsonObj = (Serializable)obj;
-		switch (jsonObj.getType()) {
+		String body = obj.toString();
+		switch (type) {
 		case "Arena":
-			insert((Arena)jsonObj);
-			break;
+			return insert(jsonParser.fromJson(body, Arena.class));
 		case "Ground":
-			insert((Ground)jsonObj);
-			break;
+			return insert(jsonParser.fromJson(body, Ground.class));
 		case "Wall":
-			insert((Wall)jsonObj);
-			break;
+			return insert(jsonParser.fromJson(body, Wall.class));
 		case "Weapon":
-			insert((Weapon)jsonObj);
-			break;
+			return insert(jsonParser.fromJson(body, Weapon.class));
 		case "Player":
-			insert((Player)jsonObj);
-			break;
+			return insert(jsonParser.fromJson(body, Player.class));
 		}
 		
-		throw new Exception("Type not found: " + jsonObj.getType());
+		throw new Exception("Type not found: " + type);
 		
 	}
 	

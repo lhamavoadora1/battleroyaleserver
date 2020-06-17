@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public interface DAO {
 	
-	public Boolean insert(Object obj) throws Exception;
+	public Boolean insert(Object obj, String type) throws Exception;
 	
 	public Boolean update(Object obj) throws Exception;
 	
