@@ -21,7 +21,7 @@ public class DbUtil {
 
 	static final String DATABASE_LOCATION = "jdbc:mysql://localhost/battleroyale?serverTimezone=GMT-3";
 	static final String USERNAME = "admin";
-	static final String PASSWORD = "admini";
+	static final String PASSWORD = "admin";
 	
     static Connection connection;
 
