@@ -50,7 +50,7 @@ public class Util {
 	}
 	
 	public static String getExceptionMessage(Exception e) {
-		return e.getMessage() + " - " + e.getStackTrace();
+		return e.getMessage() + " - " + e.getStackTrace().toString();
 	}
 
 }

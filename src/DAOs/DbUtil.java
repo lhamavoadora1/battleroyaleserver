@@ -1,8 +1,6 @@
 package DAOs;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 //Reference: https://github.com/danielscarvalho/FTT-PEOPLE-WEB-DB
 
@@ -21,9 +19,9 @@ public class DbUtil {
 //		
 //	}
 
-	static final String DATABASE_LOCATION = "jdbc:mysql://localhost/test?serverTimezone=GMT-3";
+	static final String DATABASE_LOCATION = "jdbc:mysql://localhost/battleroyale?serverTimezone=GMT-3";
 	static final String USERNAME = "admin";
-	static final String PASSWORD = "admin";
+	static final String PASSWORD = "admini";
 	
     static Connection connection;
 

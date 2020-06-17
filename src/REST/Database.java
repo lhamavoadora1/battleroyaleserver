@@ -25,24 +25,24 @@ public class Database extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String body = Util.getRequestBody(request);
+		String type = request.getHeader("Type");
 		
 		System.out.println("from server" + body);
 		
 //		Boolean hasError = false;
 		String message;
 		
-		Gson jsonParser = new Gson();
 		MySQL database = new MySQL();
 		
 		try {
 		
-			Serializable jsonObj = jsonParser.fromJson(body, Serializable.class);
-			database.insert(jsonObj);
+			database.insert(body, type);
 			
-			message = "Body returned";
+			message = "Success";
 		
 		} catch (Exception e) {
 			message = Util.getExceptionMessage(e);
+			System.out.println(message);
 		}
 		
 		response.getWriter().append(message);
