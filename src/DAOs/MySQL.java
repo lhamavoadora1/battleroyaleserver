@@ -64,7 +64,8 @@ public class MySQL implements DAO {
 		
 	}
 	
-	void insert(Arena arena) throws SQLException {
+	Boolean insert(Arena arena) throws SQLException {
+		Boolean success = true;
 		String name  = arena.getName();
 		String grid  = jsonParser.toJson(arena.getGrid());
 		String query = "INSERT INTO ARENA (ARN_NAME, ARN_GRID) VALUES (?, ?);";
@@ -79,11 +80,12 @@ public class MySQL implements DAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			
+			success = false;
 		} finally {
 			if (connection != null) {
 				connection.close();
 			}
+			return success;
 		}
 		
 	}
