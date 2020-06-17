@@ -16,6 +16,12 @@ import VOs.*;
 @WebServlet("/database")
 public class Database extends HttpServlet {
 	
+	// Salvar entidades principais do jogo battleroyale no banco para consulta futura
+	
+	// Caue da Conceição Morelis 081170042
+	// Iago Gomes 081170024
+	// Carlos Augusto Reis 082170042
+	
 	private static final long serialVersionUID = 1L;
 
     public Database() {
