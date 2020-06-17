@@ -8,12 +8,7 @@ import java.util.LinkedList;
 
 import com.google.gson.Gson;
 
-import VOs.Arena;
-import VOs.Ground;
-import VOs.Player;
-import VOs.Serializable;
-import VOs.Wall;
-import VOs.Weapon;
+import VOs.*;
 
 public class MySQL implements DAO {
 	
@@ -89,7 +84,8 @@ public class MySQL implements DAO {
 		}
 		
 	}
-	void insert(Ground ground) throws SQLException {
+	Boolean insert(Ground ground) throws SQLException {
+		Boolean success = true;
 		String name     = ground.getName();
 		String type     = ground.getType();
 		String imageUrl = ground.getImageUrl();
@@ -106,15 +102,18 @@ public class MySQL implements DAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+			success = false;
 			
 		} finally {
 			if (connection != null) {
 				connection.close();
 			}
+			return success;
 		}
 		
 	}
-	void insert(Wall wall) throws SQLException {
+	Boolean insert(Wall wall) throws SQLException {
+		Boolean success = true;
 		String name     = wall.getName();
 		String type     = wall.getType();
 		String imageUrl = wall.getImageUrl();
@@ -131,14 +130,17 @@ public class MySQL implements DAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+			success = false;
 			
 		} finally {
 			if (connection != null) {
 				connection.close();
 			}
+			return success;
 		}
 	}
-	void insert(Weapon weapon) throws SQLException {
+	Boolean insert(Weapon weapon) throws SQLException {
+		Boolean success = true;
 		String name     = weapon.getName();
 		String type     = weapon.getType();
 		String imageUrl = weapon.getImageUrl();
@@ -159,16 +161,19 @@ public class MySQL implements DAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+			success = false;
 			
 		} finally {
 			if (connection != null) {
 				connection.close();
 			}
+			return success;
 		}
 
 	}
 	
-	void insert(Player player) throws SQLException {
+	Boolean insert(Player player) throws SQLException {
+		Boolean success = true;
 		String id         = player.getId();
 		String name       = player.getName();
 		String imageUrl   = player.getImageUrl();
@@ -187,10 +192,12 @@ public class MySQL implements DAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+			success = false;
 		} finally {
 			if (connection != null) {
 				connection.close();
 			}
+			return success;
 		}
 	}
 
