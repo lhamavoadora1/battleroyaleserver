@@ -1,5 +1,7 @@
 package Utils;
 
+import Actions.Direction;
+
 public class Coordinate {
 	
 	private Integer x;
@@ -42,6 +44,62 @@ public class Coordinate {
 				return new Coordinate(this.x + value, this.y);
 			case Y:
 				return new Coordinate(this.x, this.y + value);
+		}
+		throw new Exception("No Axis to increase");
+	}
+	
+	public Coordinate get(Axis axis, Integer value, Direction direction) throws Exception {
+		switch (axis) {
+			case X:
+				switch (value) {
+					case 1:
+						switch (direction) {
+							case UP:
+								new Coordinate(this.x + 1, this.y);
+							case DOWN:
+								new Coordinate(this.x - 1, this.y);
+							case LEFT:
+								new Coordinate(this.x, this.y + 1);
+							case RIGHT:
+								new Coordinate(this.x, this.y - 1);
+						}
+					case -1:
+						switch (direction) {
+							case UP:
+								new Coordinate(this.x - 1, this.y);
+							case DOWN:
+								new Coordinate(this.x + 1, this.y);
+							case LEFT:
+								new Coordinate(this.x, this.y - 1);
+							case RIGHT:
+								new Coordinate(this.x, this.y + 1);
+						}
+				}
+			case Y:
+				switch (value) {
+					case 1:
+						switch (direction) {
+							case UP:
+								new Coordinate(this.x, this.y + 1);
+							case DOWN:
+								new Coordinate(this.x, this.y - 1);
+							case LEFT:
+								new Coordinate(this.x - 1, this.y);
+							case RIGHT:
+								new Coordinate(this.x + 1, this.y);
+						}
+					case -1:
+						switch (direction) {
+							case UP:
+								new Coordinate(this.x, this.y - 1);
+							case DOWN:
+								new Coordinate(this.x, this.y + 1);
+							case LEFT:
+								new Coordinate(this.x + 1, this.y);
+							case RIGHT:
+								new Coordinate(this.x - 1, this.y);
+						}
+				}
 		}
 		throw new Exception("No Axis to increase");
 	}
