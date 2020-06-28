@@ -49,6 +49,10 @@ public class Util {
 		return request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 	}
 	
+	public static Boolean isNull(Object obj) {
+		return obj == null;
+	}
+	
 	public static String getExceptionMessage(Exception e) {
 		return e.getMessage() + " - " + e.getStackTrace().toString();
 	}

@@ -1,18 +1,26 @@
 package Actions;
 
+import com.google.gson.Gson;
+
 import VOs.*;
 
 public class Command {
 	
-	public static void set(String type, Life life, Direction direction, Arena arena) throws Exception {
+	static Arena arena;
+	
+	public static void set(Intention intention, Arena arena) throws Exception {
 		
-		switch (type) {
+		Gson parser = new Gson();
+		
+		switch (intention.getType()) {
 			case "attack":
-				Action.attackUI(life, direction, arena);
+				Action act = parser.fromJson(parser.toJson(intention), Action.class);
+				act.attackUI();
 				break;
 			case "move":
-				Movement.moveUI(life, direction, arena);
-				break;	
+				Movement mv = parser.fromJson(parser.toJson(intention), Movement.class);
+				mv.moveUI();
+				break;
 		}
 		
 	}

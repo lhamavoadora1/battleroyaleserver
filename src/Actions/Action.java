@@ -9,7 +9,7 @@ import Things.*;
 
 public class Action extends Intention {
 	
-	public Action(String roundId, Life attacker, Direction direction, Arena arena) {
+	public Action(Life attacker, Direction direction, Arena arena) {
 		super("attack", attacker, direction, arena);
 	}
 	
