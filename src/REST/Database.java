@@ -33,7 +33,7 @@ public class Database extends HttpServlet {
 		String body = Util.getRequestBody(request);
 		String type = request.getHeader("Type");
 		
-		System.out.println("from server" + body);
+		System.out.println("Received: " + body);
 		
 //		Boolean hasError = false;
 		String message;
