@@ -39,11 +39,6 @@ public class Round extends HttpServlet {
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-//		if (sessionMap == null) {
-//			sessionMap             = new HashMap<String, Session>();
-//			playerIdToSessionIdMap = new HashMap<String, String>(); 
-//		}
-		
 		Session session = null;
 		String message = null;
 		Boolean confirmation = true;
@@ -55,9 +50,10 @@ public class Round extends HttpServlet {
 				sessionMap.put(session.getId(), session);
 			}
 			
-			String playerId = Util.getRequestBody(request);
+			Player player = jsonParser.fromJson(Util.getRequestBody(request), Player.class);
+			String playerId = player.getId();
 			
-			System.out.println("Received Player Id: " + playerId);
+			System.out.println("Received Player: " + Util.getRequestBody(request));
 
 			Session firstNotFull = null;
 			Session containingPlayer = null;
@@ -73,9 +69,17 @@ public class Round extends HttpServlet {
 				
 			}
 			
+			if (firstNotFull == null) {
+				sessionMap.put(session.getId(), session);
+				firstNotFull = session;
+			}
+			
 			if (containingPlayer != null) {
+				System.out.println("session contains player!");
 				message = containingPlayer.getId();
 			} else if (firstNotFull != null) {
+				System.out.println("adding to new session!");
+				firstNotFull.join(player); // ideally this should query in database the player info
 				message = firstNotFull.getId();
 				playerIdToSessionIdMap.put(playerId, firstNotFull.getId());
 			} else {

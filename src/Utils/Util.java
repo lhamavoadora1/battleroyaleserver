@@ -29,7 +29,7 @@ public class Util {
 				return array[i];
 			}
 		}
-		System.out.println("Array is empty!");
+//		System.out.println("Array is empty!");
 		return null;
 	}
 	
@@ -41,7 +41,7 @@ public class Util {
 				return array[i];
 			}
 		}
-		System.out.println("Array is empty!");
+//		System.out.println("Array is empty!");
 		return null;
 	}
 	
