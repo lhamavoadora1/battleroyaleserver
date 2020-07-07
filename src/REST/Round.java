@@ -27,15 +27,22 @@ public class Round extends HttpServlet {
         super();
     }
 
-	HashMap<String, Session> sessionMap;
+    public static HashMap<String, Session> sessionMap;
+    public static HashMap<String, String> playerIdToSessionIdMap;
+    
+    static {
+		sessionMap             = new HashMap<String, Session>();
+		playerIdToSessionIdMap = new HashMap<String, String>(); 
+    }
 	
 	Gson jsonParser = new Gson();
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		if (sessionMap == null) {
-			sessionMap = new HashMap<String, Session>();
-		}
+//		if (sessionMap == null) {
+//			sessionMap             = new HashMap<String, Session>();
+//			playerIdToSessionIdMap = new HashMap<String, String>(); 
+//		}
 		
 		Session session = null;
 		String message = null;
@@ -70,6 +77,7 @@ public class Round extends HttpServlet {
 				message = containingPlayer.getId();
 			} else if (firstNotFull != null) {
 				message = firstNotFull.getId();
+				playerIdToSessionIdMap.put(playerId, firstNotFull.getId());
 			} else {
 				confirmation = false;
 				message = "Deu ruim irmão";

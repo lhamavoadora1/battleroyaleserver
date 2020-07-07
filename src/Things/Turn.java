@@ -1,10 +1,12 @@
 package Things;
 
+import java.util.LinkedHashMap;
+
 import Actions.*;
 
 public class Turn {
 	
 	public Boolean isPlayerTurn;
-	public Intention[] intentionArray;
+	public LinkedHashMap<Long, Intention> intentionMap;
 
 }
