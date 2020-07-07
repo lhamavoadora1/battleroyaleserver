@@ -2,6 +2,11 @@ package Things;
 
 import java.util.HashMap;
 
+import com.google.gson.Gson;
+
+import Actions.Action;
+import Actions.Intention;
+import Actions.Movement;
 import Utils.Key;
 import VOs.*;
 
@@ -53,6 +58,30 @@ public class Session {
 	
 	public Boolean containsPlayer(String playerId) {
 		return playerMap.containsKey(playerId);
+	}
+	
+	public void userIntention(Intention intention) throws Exception {
+		
+		if (this.arena == null) {
+			System.out.println("Arena is null!");
+		} else {
+			
+			intention.setArena(this.arena);
+
+			Gson parser = new Gson();
+			switch (intention.getType()) {
+				case "attack":
+					Action act = parser.fromJson(parser.toJson(intention), Action.class);
+					act.attackUI();
+					break;
+				case "move":
+					Movement mv = parser.fromJson(parser.toJson(intention), Movement.class);
+					mv.moveUI();
+					break;
+			}
+			
+		}
+		
 	}
 
 }
